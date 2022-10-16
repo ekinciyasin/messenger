@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.messenger.ws.configuration.MessengerUserDetails;
 import com.messenger.ws.shared.CurrentUser;
 import com.messenger.ws.shared.Views;
 import com.messenger.ws.user.User;
@@ -24,7 +23,6 @@ public class AuthController {
 	@PostMapping("/api/1.0/auth")
 	@JsonView(Views.Base.class)
 	ResponseEntity<?> handleAuthentication(@CurrentUser User user) {
-		System.out.println("auth");
 		return ResponseEntity.ok(user);
 	}
 	
